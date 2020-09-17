@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-type menuFullProps = {
+type MenuFullProps = {
   isOpen: boolean
 }
 export const Wrapper = styled.menu`
@@ -13,7 +13,7 @@ export const Wrapper = styled.menu`
     position: relative;
   `}
 `
-export const MenuFull = styled.nav<menuFullProps>`
+export const MenuFull = styled.nav<MenuFullProps>`
   ${({ isOpen, theme }) => css`
     display: flex;
     flex-direction: column;
@@ -26,6 +26,7 @@ export const MenuFull = styled.nav<menuFullProps>`
     bottom: 0;
     height: 100vh;
     overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
 
@@ -44,13 +45,21 @@ export const MenuFull = styled.nav<menuFullProps>`
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xlarge};
       margin-bottom: ${theme.spacings.small};
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
     }
+
     ${MenuNav} {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       flex: 1;
+    }
+
+    ${RegisterBox} {
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
     }
   `}
 `
