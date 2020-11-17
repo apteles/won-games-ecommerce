@@ -25,4 +25,42 @@ describe('<Banner />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render with ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="My Ribbon"
+        ribbonSize="normal"
+        ribbonColor="primary"
+      />
+    )
+    expect(screen.getByText(/my ribbon/i)).toBeInTheDocument()
+    expect(screen.getByText(/my ribbon/i)).toHaveStyle({
+      backgroundColor: '#F231A5'
+    })
+    expect(screen.getByText(/my ribbon/i)).toHaveStyle({
+      height: '3.6rem',
+      fontSize: '1.4rem'
+    })
+  })
+
+  it('should render ribbon with secondary color and small size in banner', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="My Ribbon"
+        ribbonSize="small"
+        ribbonColor="secondary"
+      />
+    )
+    expect(screen.getByText(/my ribbon/i)).toBeInTheDocument()
+    expect(screen.getByText(/my ribbon/i)).toHaveStyle({
+      backgroundColor: '#3CD3C1'
+    })
+    expect(screen.getByText(/my ribbon/i)).toHaveStyle({
+      height: '2.6rem',
+      fontSize: '1.2rem'
+    })
+  })
 })
