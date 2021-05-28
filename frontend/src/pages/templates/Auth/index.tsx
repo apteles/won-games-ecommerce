@@ -13,7 +13,7 @@ const Auth = ({ title, children }: AuthProps) => (
         <Logo />
 
         <div>
-          <Heading>All your favorite games in on place</Heading>
+          <Heading size="huge">All your favorite games in on place</Heading>
           <S.Subtitle>
             <strong>WON</strong> is the best and most complete <br /> gaming
             platform.
