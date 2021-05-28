@@ -26,7 +26,7 @@ const Auth = ({ title, children }: AuthProps) => (
 
     <S.ContentRight>
       <S.ContentWrapper>
-        <Logo color="black" size="large" />
+        <Logo color="black" size="large" id="logo-signin" />
         <Heading color="black" lineColor="secondary" lineLeft>
           {title}
         </Heading>
