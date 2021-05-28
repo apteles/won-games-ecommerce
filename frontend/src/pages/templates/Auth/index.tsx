@@ -8,23 +8,30 @@ type AuthProps = {
 }
 const Auth = ({ title, children }: AuthProps) => (
   <S.Wrapper>
-    <S.BannerBlock>
-      <Logo />
+    <S.BannerOverlay>
+      <S.BannerContent>
+        <Logo />
 
-      <Heading>All your favorite games in on place</Heading>
-      <S.Subtitle>
-        <strong>WON</strong> is the best and most complete gaming platform
-      </S.Subtitle>
+        <div>
+          <Heading>All your favorite games in on place</Heading>
+          <S.Subtitle>
+            <strong>WON</strong> is the best and most complete <br /> gaming
+            platform.
+          </S.Subtitle>
+        </div>
 
-      <S.Footer>Won Games 2021 &copy; Todos os Direitos Reservados</S.Footer>
-    </S.BannerBlock>
+        <S.Footer>Won Games 2021 &copy; Todos os Direitos Reservados</S.Footer>
+      </S.BannerContent>
+    </S.BannerOverlay>
 
     <S.ContentRight>
-      <Logo color="black" size="large" />
-      <Heading color="black" lineColor="secondary" lineLeft>
-        {title}
-      </Heading>
-      {children}
+      <S.ContentWrapper>
+        <Logo color="black" size="large" />
+        <Heading color="black" lineColor="secondary" lineLeft>
+          {title}
+        </Heading>
+        {children}
+      </S.ContentWrapper>
     </S.ContentRight>
   </S.Wrapper>
 )
